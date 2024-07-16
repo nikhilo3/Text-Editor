@@ -2,6 +2,7 @@
 Text-Editor is simple text editor where enter your block of text and its count word and character and convert text copy text Etc..  with light and Dark mode
 
 feature:-
+
 Count word
 
 Count character
