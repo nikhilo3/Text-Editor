@@ -3,7 +3,11 @@ Text-Editor is simple text editor where enter your block of text and its count w
 
 feature:-
 Count word
+
 Count character
+
 Convert uppercase and lowercase
+
 voice preview of your text
+
 Dark-mode and Light-mode support
