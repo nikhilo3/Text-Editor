@@ -1,9 +1,9 @@
 import Alert from "./components/Alert";
 import Navbar from "./components/Navbar";
 import Textutil from "./components/Textutil";
-import About from "./components/about";
+// import About from "./components/about";
 import { useState } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+// import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 
 function App() {
@@ -45,21 +45,24 @@ const[alert,setalert] = useState(null);
       showalert("enable light mode","success");
     }
   }
+  
 
   return (
     <>
-    <Router>
+    {/* <Router> */}
       <Navbar title="textutils" pmode={mode} function1={modetoggle} text={btntext}/>
       <Alert alert={alert}/>
-      <Routes>
-        <Route exact path="/" element={<Textutil heading="Enter text to analyz" pmode={mode} showalert={showalert}/>}/>
-       
-        <Route exact path="/about" element={<About pmode={mode}/>}/>
+      {/* <Routes> */}
+        {/* <Route exact path="/" element={}/> */}
+        <Textutil heading="Enter text to analyz" pmode={mode} showalert={showalert}/>
+        {/* <Route exact path="/about" element={<About pmode={mode}/>}/> */}
         
-      </Routes>
-    </Router>
+      {/* </Routes> */}
+    {/* </Router> */}
     </>
+    
   );
+  
 }
 
 export default App;

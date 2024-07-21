@@ -34,9 +34,10 @@ export default function Textutil(props) {
       }
 
       let copy = () => {
-        let text = document.getElementById("mybox");
-        text.select();
-        navigator.clipboard.writeText(text.value);
+        // let text = document.getElementById("mybox");
+        // text.select();
+        navigator.clipboard.writeText(text);
+        // document.getSelection().removeAllRanges();
         props.showalert("text copy successfull","success");
       }
       
@@ -46,18 +47,18 @@ export default function Textutil(props) {
         <div className="container my-3" style={{color: props.pmode==='dark'?'white':'black'}}>
             <h1>{props.heading}</h1>
             <textarea className='form-control my-8' rows="8" id="mybox" value={text} onChange={handleonchange}></textarea>
-            <button className='btn btn-primary my-3 mx-1' onClick={handleupclick}>convert to uppercase</button>
-            <button className='btn btn-primary my-3 mx-1' onClick={handleloclick}>convert to lowercase</button>
-            <button className='btn btn-primary my-3 mx-1' onClick={handleclear}>Clear</button>
-            <button className='btn btn-primary my-3 mx-1' onClick={speak}>speak</button>
-            <button className='btn btn-primary my-3 mx-1' onClick={copy}>copy</button>
+            <button disabled={text.length===0} className='btn btn-primary my-3 mx-1' onClick={handleupclick}>convert to uppercase</button>
+            <button disabled={text.length===0} className='btn btn-primary my-3 mx-1' onClick={handleloclick}>convert to lowercase</button>
+            <button disabled={text.length===0} className='btn btn-primary my-3 mx-1' onClick={handleclear}>Clear</button>
+            <button disabled={text.length===0} className='btn btn-primary my-3 mx-1' onClick={speak}>speak</button>
+            <button disabled={text.length===0} className='btn btn-primary my-3 mx-1' onClick={copy}>copy</button>
             <div>
                 <h2>Your text summary</h2>
-                <p>{text.split(" ").length}word and {text.length} character</p>
+                <p>{text.split(/\s+/).filter((element)=>{return element.length!==0}).length}word and {text.length} character</p>
             </div>
             <div>
                 <h2>preview</h2>
-                <p>{text}</p>
+                <p>{text.length>0?text:"NOTHING TO PREVIEW"}</p>
             </div>
         </div>
         
