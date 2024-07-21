@@ -1,6 +1,6 @@
 {
   "homepage": "https://nikhilo3.github.io/Text-Editor",
-  "name": "my-app",
+  "name": "text-editor",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
